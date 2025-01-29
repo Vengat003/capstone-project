@@ -5,7 +5,7 @@ pipeline {
             steps {
                 script {
                     // Build Docker image
-                    sh 'docker build -t vengat001/dev:latest .'
+                    sh 'docker build -t vengat001/prod:latest .'
                 }
             }
         }
@@ -16,7 +16,7 @@ pipeline {
                     sh "echo $DOCKER_CREDENTIALS_PSWD | docker login -u $DOCKER_CREDENTIALS_USR --password-stdin"
                     
                     // Push images to DockerHub
-                    sh 'docker push vengat001/dev:latest’
+                    sh 'docker push vengat001/prod:latest’
                 }
             }
         }
