@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     // Login to DockerHub using the Personal Access Token
-                    sh "echo $DOCKER_CREDENTIALS_PSWD | docker login -u $DOCKER_CREDENTIALS_USR --password-stdin"
+                    sh "docker login -u $DOCKER_CREDENTIALS_USR -p $DOCKER_CREDENTIALS_PSWD"
                     
                     // Push images to DockerHub
                     sh 'docker push vengat001/dev:latest'
