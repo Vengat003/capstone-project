@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     // Login to DockerHub using the Personal Access Token
-                    sh "docker login -u $DOCKER_USR -p $DOCKER_PSWD"
+                    sh "docker login -u vengat001 -p dckr_pat_bbWUpf4AuIqNsDdfkHXIW4jlXcY"
                     
                     // Push images to DockerHub
                     sh 'docker push vengat001/dev:latest'
